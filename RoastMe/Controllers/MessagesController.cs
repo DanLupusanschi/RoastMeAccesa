@@ -11,6 +11,7 @@ using RoastMe.Controllers;
 using System.Collections.Generic;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Linq;
+using RoastMe.Data;
 
 namespace RoastMe
 {
@@ -49,13 +50,11 @@ namespace RoastMe
                         faceCount = faces.Length;
 
 
-                        foreach (var t in faceTraits)
-                        {
-                            traitsConcatenated = string.Format("{0}:{1}:{2}{3}", traitsConcatenated, t.Name, t.Accuracy, Environment.NewLine);
-                        }
-                        var traits = string.Empty;
 
-                        Activity reply = activity.CreateReply($"You have {traitsConcatenated}");
+                        var jokeService = new JokeService();
+                        var joke = jokeService.GetJoke(faceTraits);
+
+                        Activity reply = activity.CreateReply(joke);
                         await connector.Conversations.ReplyToActivityAsync(reply);
                     }
                     else

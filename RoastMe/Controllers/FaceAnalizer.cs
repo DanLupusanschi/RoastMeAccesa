@@ -35,7 +35,7 @@ namespace RoastMe.Controllers
         private static void ProcessGlasses(FaceAttributes faceAttributes, List<Trait> traits)
         {
             if (faceAttributes.Glasses == Glasses.ReadingGlasses)
-                traits.Add(new Trait { Name = Glasses.ReadingGlasses.ToString(), Accuracy = 1.0 });
+                traits.Add(new Trait { Name = "glasses", Accuracy = 1.0 });
         }
 
         private static void ProcessNose(FaceRectangle faceRectangle, FaceLandmarks faceLandmarks, FaceAttributes faceAttributes, List<Trait> traits)
@@ -104,7 +104,7 @@ namespace RoastMe.Controllers
         private static void ProcessBeard(FaceAttributes faceAttributes, List<Trait> traits)
         {
             if (faceAttributes.FacialHair.Beard >= 0.4)
-                traits.Add(new Trait { Name = "Beard", Accuracy = faceAttributes.FacialHair.Beard });
+                traits.Add(new Trait { Name = "beard", Accuracy = faceAttributes.FacialHair.Beard });
         }
         private static void ProcessBald(FaceAttributes faceAttributes, List<Trait> traits)
         {
@@ -115,7 +115,7 @@ namespace RoastMe.Controllers
         {
             var hair = faceAttributes.Hair.HairColor.OrderByDescending(x => x.Confidence).FirstOrDefault();
             if (hair != null && hair.Color == HairColorType.Blond && faceAttributes.Gender == "female")
-                traits.Add(new Trait { Name = "Blonde", Accuracy = hair.Confidence });
+                traits.Add(new Trait { Name = "blonde", Accuracy = hair.Confidence });
         }
 
         private static void ProcessOldAge(FaceAttributes faceAttributes, List<Trait> traits)
@@ -136,7 +136,7 @@ namespace RoastMe.Controllers
                 traits.Add(new Trait { Name = "surprise", Accuracy = faceAttributes.Emotion.Surprise });
             }
 
-            if (faceAttributes.Emotion.Neutral >= 0.4)
+            if (faceAttributes.Emotion.Neutral >= 0.8)
             {
                 traits.Add(new Trait { Name = "neutral", Accuracy = faceAttributes.Emotion.Neutral });
             }
