@@ -26,7 +26,7 @@ namespace RoastMe.Controllers
             //ProcessMakeup(face.FaceAttributes, traits);
             ProcessOldAge(face.FaceAttributes, traits);
 
-            ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes);
+            //ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes);
 
             return traits;
         }
