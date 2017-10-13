@@ -20,8 +20,11 @@ namespace RoastMe.Controllers
             ProcessGlasses(face.FaceAttributes, traits);
             ProcessHairColor(face.FaceAttributes, traits);
             ProcessBald(face.FaceAttributes, traits);
-
-            ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes);
+            ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes, traits);
+            ProcessBeard(face.FaceAttributes, traits);
+            ProcessEmotion(face.FaceAttributes, traits);
+            //ProcessMakeup(face.FaceAttributes, traits);
+            ProcessOldAge(face.FaceAttributes, traits);
 
             return traits;
         }
@@ -91,19 +94,56 @@ namespace RoastMe.Controllers
 
         private static void ProcessBeard(FaceAttributes faceAttributes, List<Trait> traits)
         {
-            if (faceAttributes.FacialHair.Beard >= 0.5)
+            if (faceAttributes.FacialHair.Beard >= 0.4)
                 traits.Add(new Trait { Name = "Beard", Accuracy = faceAttributes.FacialHair.Beard });
         }
         private static void ProcessBald(FaceAttributes faceAttributes, List<Trait> traits)
         {
-            if (faceAttributes.Hair.Bald >= 0.5)
-                traits.Add(new Trait { Name = "Bald", Accuracy = faceAttributes.FacialHair.Beard });
+            if (faceAttributes.Hair.Bald >= 0.4)
+                traits.Add(new Trait { Name = "Bald", Accuracy = faceAttributes.Hair.Bald });
         }
         private static void ProcessHairColor(FaceAttributes faceAttributes, List<Trait> traits)
         {
-            if (faceAttributes.Hair.HairColor.OrderByDescending(x=>x.Confidence).First().Color == HairColorType.Blond && faceAttributes.Gender== "female")
-                traits.Add(new Trait { Name = "Blonde", Accuracy = faceAttributes.FacialHair.Beard });
+            var hair = faceAttributes.Hair.HairColor.OrderByDescending(x => x.Confidence).FirstOrDefault();
+            if (hair != null && hair.Color == HairColorType.Blond && faceAttributes.Gender == "female")
+                traits.Add(new Trait { Name = "Blonde", Accuracy = hair.Confidence });
         }
 
+        private static void ProcessOldAge(FaceAttributes faceAttributes, List<Trait> traits)
+        {
+            if (faceAttributes.Age > 40)
+                traits.Add(new Trait { Name = "old", Accuracy = 1 });
+        }
+
+        private static void ProcessEmotion(FaceAttributes faceAttributes, List<Trait> traits)
+        {
+            if (faceAttributes.Emotion.Sadness >= 0.4)
+            {
+                traits.Add(new Trait { Name = "sadness", Accuracy = faceAttributes.Emotion.Sadness });
+            }
+
+            if (faceAttributes.Emotion.Surprise >= 0.4)
+            {
+                traits.Add(new Trait { Name = "surprise", Accuracy = faceAttributes.Emotion.Surprise });
+            }
+
+            if (faceAttributes.Emotion.Neutral >= 0.4)
+            {
+                traits.Add(new Trait { Name = "neutral", Accuracy = faceAttributes.Emotion.Neutral });
+            }
+        }
+
+        private static void ProcessMakeup(FaceAttributes faceAttributes, List<Trait> traits)
+        {
+            if (faceAttributes.Makeup?.EyeMakeup == true)
+            {
+                traits.Add(new Trait { Name = "eyemakeup", Accuracy = 1 });
+            }
+
+            if (faceAttributes.Makeup?.LipMakeup == true)
+            {
+                traits.Add(new Trait { Name = "lipmakeup", Accuracy = 1 });
+            }
+        }
     }
 }
