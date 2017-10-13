@@ -54,7 +54,7 @@ namespace RoastMe
                         var jokeService = new JokeService();
                         var joke = jokeService.GetJoke(faceTraits);
 
-                        Activity reply = activity.CreateReply($"You have {traitsConcatenated}");
+                        Activity reply = activity.CreateReply(joke);
                         await connector.Conversations.ReplyToActivityAsync(reply);
                     }
                     else

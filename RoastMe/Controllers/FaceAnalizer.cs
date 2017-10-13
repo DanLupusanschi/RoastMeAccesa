@@ -136,7 +136,7 @@ namespace RoastMe.Controllers
                 traits.Add(new Trait { Name = "surprise", Accuracy = faceAttributes.Emotion.Surprise });
             }
 
-            if (faceAttributes.Emotion.Neutral >= 0.4)
+            if (faceAttributes.Emotion.Neutral >= 0.8)
             {
                 traits.Add(new Trait { Name = "neutral", Accuracy = faceAttributes.Emotion.Neutral });
             }

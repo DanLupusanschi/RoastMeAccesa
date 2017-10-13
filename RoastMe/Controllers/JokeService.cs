@@ -26,7 +26,8 @@ namespace RoastMe.Controllers
             dadapter.Fill(ds, "Jokes");
             connection.Close();
 
-            traits.Add(new Trait { Name = "neutral", Accuracy = 1 });
+            if(traits.Count <= 0)
+                traits.Add(new Trait { Name = "neutral", Accuracy = 1 });
 
             var jokes = new List<string>();
 
