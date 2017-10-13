@@ -28,7 +28,7 @@ namespace RoastMe.Controllers
                 WebClient client = new WebClient();
                 var imageStream = client.OpenRead(imageFilePath);
 
-                Face[] faces = await faceServiceClient.DetectAsync(imageStream, true, false, Enum.GetValues(typeof(FaceAttributeType)).Cast<FaceAttributeType>().ToList());
+                Face[] faces = await faceServiceClient.DetectAsync(imageStream, true, true, Enum.GetValues(typeof(FaceAttributeType)).Cast<FaceAttributeType>().ToList());
                 return faces;
             }
             // Catch and display Face API errors.
