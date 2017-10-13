@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ProjectOxford.Face;
@@ -21,17 +22,13 @@ namespace RoastMe.Controllers
 
         public async Task<Face[]> UploadAndDetectFaces(string imageFilePath)
         {
-            // The list of Face attributes to return.
-            IEnumerable<FaceAttributeType> faceAttributes =
-                new FaceAttributeType[] { FaceAttributeType.Gender, FaceAttributeType.Age, FaceAttributeType.Smile, FaceAttributeType.Emotion, FaceAttributeType.Glasses, FaceAttributeType.Hair };
-
             // Call the Face API.
             try
             {
                 WebClient client = new WebClient();
                 var imageStream = client.OpenRead(imageFilePath);
 
-                Face[] faces = await faceServiceClient.DetectAsync(imageStream, returnFaceId: true, returnFaceLandmarks: false, returnFaceAttributes: faceAttributes);
+                Face[] faces = await faceServiceClient.DetectAsync(imageStream, true, false, Enum.GetValues(typeof(FaceAttributeType)).Cast<FaceAttributeType>().ToList());
                 return faces;
             }
             // Catch and display Face API errors.
