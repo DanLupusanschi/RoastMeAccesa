@@ -432,7 +432,7 @@ body > .slide-container .slide-status {
   }
   
   h1 {
-	font-size: 6em;
+	font-size: 9em;
   }
   
   p,ul,li,span {
@@ -546,3 +546,14 @@ body > .slide-container .slide-status {
       bottom: 0;
       z-index: 11;
   }
+
+  .team {
+  position: absolute;
+    bottom: 05px;
+    left: 15px;
+  }
+
+.team ul li {
+  font-size: 20pt;
+  list-style-type: none;
+}
