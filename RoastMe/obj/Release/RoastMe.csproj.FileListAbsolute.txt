@@ -1,0 +1,51 @@
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Bot Application1.dll.config
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Bot Application1.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Bot Application1.pdb
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Autofac.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Chronic.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.Bot.Builder.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.Bot.Connector.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.ProjectOxford.Common.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.ProjectOxford.Face.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Newtonsoft.Json.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Net.Http.Extensions.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Net.Http.Formatting.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Net.Http.Primitives.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Web.Http.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Web.Http.WebHost.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Autofac.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.Bot.Builder.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.Bot.Connector.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Newtonsoft.Json.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Net.Http.Extensions.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Net.Http.Formatting.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Net.Http.Primitives.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Web.Http.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\System.Web.Http.WebHost.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\obj\Release\RoastMe.csproj.App.config
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\obj\Release\RoastMe.csprojResolveAssemblyReference.cache
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\obj\Release\RoastMe.csproj.CoreCompileInputs.cache
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\obj\Release\Bot Application1.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\obj\Release\Bot Application1.pdb
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\it\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\nl\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
