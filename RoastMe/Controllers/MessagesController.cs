@@ -29,6 +29,8 @@ namespace RoastMe
                     int length = (activity.Text ?? string.Empty).Length;
                     string faceConfirm = string.Empty;
                     // return our reply to the user
+
+                    var replyText = WatsonService.TalkToWatson(activity.Text, activity.Conversation.Id).Result;
                     if (activity.Attachments.Count == 1)
                     {
                         FaceConnector faceConnector = new FaceConnector();
