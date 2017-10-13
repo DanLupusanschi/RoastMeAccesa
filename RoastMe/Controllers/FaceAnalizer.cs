@@ -18,7 +18,7 @@ namespace RoastMe.Controllers
         {
             var traits = new List<Trait>();
 
-
+            
 
             return traits;
         }

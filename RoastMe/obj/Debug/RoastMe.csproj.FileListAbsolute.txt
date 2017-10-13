@@ -53,3 +53,58 @@ C:\Users\dan.lupusanschi\Documents\Visual Studio 2017\Projects\RoastMe\RoastMe\b
 C:\Users\dan.lupusanschi\Documents\Visual Studio 2017\Projects\RoastMe\RoastMe\bin\Flurl.Http.dll
 C:\Users\dan.lupusanschi\Documents\Visual Studio 2017\Projects\RoastMe\RoastMe\bin\Flurl.xml
 C:\Users\dan.lupusanschi\Documents\Visual Studio 2017\Projects\RoastMe\RoastMe\bin\Flurl.Http.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Bot Application1.dll.config
+C:\Projects\RoastMeAccesa\RoastMe\bin\Bot Application1.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Bot Application1.pdb
+C:\Projects\RoastMeAccesa\RoastMe\bin\Autofac.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Chronic.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Flurl.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Flurl.Http.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.Bot.Builder.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.Bot.Connector.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.ProjectOxford.Common.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.ProjectOxford.Face.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Newtonsoft.Json.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Net.Http.Extensions.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Net.Http.Formatting.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Net.Http.Primitives.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Web.Http.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Web.Http.WebHost.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\Autofac.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Flurl.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Flurl.Http.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.Bot.Builder.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.Bot.Connector.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\Newtonsoft.Json.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Net.Http.Extensions.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Net.Http.Formatting.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Net.Http.Primitives.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Web.Http.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\System.Web.Http.WebHost.xml
+C:\Projects\RoastMeAccesa\RoastMe\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\it\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\nl\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\RoastMe.csproj.App.config
+C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\RoastMe.csprojResolveAssemblyReference.cache
+C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\RoastMe.csproj.CoreCompileInputs.cache
+C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\Bot Application1.dll
+C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\Bot Application1.pdb
