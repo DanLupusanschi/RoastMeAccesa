@@ -21,7 +21,7 @@ namespace RoastMe.Controllers
             ProcessHairColor(face.FaceAttributes, traits);
             ProcessBald(face.FaceAttributes, traits);
 
-
+            ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes);
 
             return traits;
         }
@@ -30,6 +30,63 @@ namespace RoastMe.Controllers
         private static void ProcessGlasses(FaceAttributes faceAttributes, List<Trait> traits) {
             if (faceAttributes.Glasses == Glasses.ReadingGlasses)
                 traits.Add(new Trait {Name = Glasses.ReadingGlasses.ToString(), Accuracy = 1.0 });
+        }
+
+        private static void ProcessNose(FaceRectangle faceRectangle, FaceLandmarks faceLandmarks, FaceAttributes faceAttributes, List<Trait> traits)
+        {
+            if (Math.Abs(faceAttributes.HeadPose.Yaw) < 8.0)
+            {
+                var noseRootSize = GetDistance(faceLandmarks.NoseRootLeft, faceLandmarks.NoseRootRight);
+                var noseAlarTopSize = GetDistance(faceLandmarks.NoseLeftAlarTop, faceLandmarks.NoseRightAlarTop);
+                var noseAlartTipSize = GetDistance(faceLandmarks.NoseLeftAlarOutTip, faceLandmarks.NoseRightAlarTop);
+                var noseHeight = GetDistance(faceLandmarks.NoseLeftAlarOutTip, faceLandmarks.NoseRootLeft);
+
+                var noseRootProportion = noseRootSize / faceRectangle.Width;
+                var noseAlarTopProportion = noseAlarTopSize / faceRectangle.Width;
+                var noseAlarTipProportion = noseAlartTipSize / faceRectangle.Width;
+                var noseHeightProportion = noseHeight / faceRectangle.Height;
+
+                var numberOfHits = 0;
+                if (noseRootProportion > 0.13)
+                {
+                    numberOfHits++;
+                }
+                if (noseAlarTopProportion > 0.2)
+                {
+                    numberOfHits++;
+                }
+                if (noseAlarTipProportion > 0.25)
+                {
+                    numberOfHits++;
+                }
+                if (noseHeightProportion > 0.25)
+                {
+                    numberOfHits++;
+                }
+
+                if (numberOfHits >= 2)
+                {
+                    traits.Add(new Trait { Name = "bignose", Accuracy = 1.0 });
+                }
+            }
+            else
+            {
+                var noseLeftLength = GetDistance(faceLandmarks.NoseTip, faceLandmarks.NoseLeftAlarOutTip);
+                var noseRightLength = GetDistance(faceLandmarks.NoseTip, faceLandmarks.NoseRightAlarOutTip);
+
+                var noseLength = Math.Max(noseLeftLength, noseRightLength);
+                var noseLengthProportion = noseLength / (faceRectangle.Width * Math.Abs(faceAttributes.HeadPose.Yaw));
+
+                if (noseLengthProportion > 0.007)
+                {
+                    traits.Add(new Trait { Name = "bignose", Accuracy = 1.0 });
+                }
+            }
+        }
+
+        private static double GetDistance(FeatureCoordinate start, FeatureCoordinate end)
+        {
+            return Math.Sqrt(Math.Pow((end.X-start.X),2) + Math.Pow((end.Y - start.Y),2));
         }
 
         private static void ProcessBeard(FaceAttributes faceAttributes, List<Trait> traits)
