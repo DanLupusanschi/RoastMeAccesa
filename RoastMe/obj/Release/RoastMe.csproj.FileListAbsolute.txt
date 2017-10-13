@@ -49,3 +49,8 @@ C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\b
 C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\it\Microsoft.Bot.Builder.resources.dll
 C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\nl\Microsoft.Bot.Builder.resources.dll
 C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Flurl.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Flurl.Http.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Flurl.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Flurl.Http.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.ProjectOxford.Vision.dll

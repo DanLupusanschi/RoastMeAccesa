@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans Bold";
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Open Sans Extra Bold";
+    src: url('../fonts/OpenSans-ExtraBold.ttf') format('truetype');
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: "Open Sans Light";
+    src: url('../fonts/OpenSans-ExtraBold.ttf') format('truetype');
+    font-weight: 200;
+}
+
+* {
+    font-family: "Open Sans", sans-serif!important; /* do not judge */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+.bold {
+    font-family: "Open Sans Bold", sans-serif!important; /* I said do not judge */
+}

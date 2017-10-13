@@ -108,3 +108,4 @@ C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\RoastMe.csprojResolveAssemblyReferen
 C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\RoastMe.csproj.CoreCompileInputs.cache
 C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\Bot Application1.dll
 C:\Projects\RoastMeAccesa\RoastMe\obj\Debug\Bot Application1.pdb
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\Microsoft.ProjectOxford.Vision.dll
