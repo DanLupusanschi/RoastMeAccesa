@@ -104,7 +104,7 @@ namespace RoastMe.Controllers
         private static void ProcessBeard(FaceAttributes faceAttributes, List<Trait> traits)
         {
             if (faceAttributes.FacialHair.Beard >= 0.4)
-                traits.Add(new Trait { Name = "Beard", Accuracy = faceAttributes.FacialHair.Beard });
+                traits.Add(new Trait { Name = "beard", Accuracy = faceAttributes.FacialHair.Beard });
         }
         private static void ProcessBald(FaceAttributes faceAttributes, List<Trait> traits)
         {
@@ -115,7 +115,7 @@ namespace RoastMe.Controllers
         {
             var hair = faceAttributes.Hair.HairColor.OrderByDescending(x => x.Confidence).FirstOrDefault();
             if (hair != null && hair.Color == HairColorType.Blond && faceAttributes.Gender == "female")
-                traits.Add(new Trait { Name = "Blonde", Accuracy = hair.Confidence });
+                traits.Add(new Trait { Name = "blonde", Accuracy = hair.Confidence });
         }
 
         private static void ProcessOldAge(FaceAttributes faceAttributes, List<Trait> traits)
