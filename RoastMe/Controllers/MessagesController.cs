@@ -9,12 +9,25 @@ using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
 using RoastMe.Controllers;
 using System.Collections.Generic;
+using RoastMe.Data;
 
 namespace RoastMe
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+        private RoastMeDbEntities1 _context;
+        public RoastMeDbEntities1 dbContext
+        {
+            get
+            {
+                if (_context == null)
+                {
+                    _context = new RoastMeDbEntities1();
+                }
+                return _context;
+            }
+        }
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -45,7 +58,6 @@ namespace RoastMe
                             faceTraits = FaceAnalizer.GetTraitsFromFace(faces[0]);
                         }
                         faceCount = faces.Length;
-
 
                     }
                     // faceConnector.UploadAndDetectFaces(activity.Attachments)
