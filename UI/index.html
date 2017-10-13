@@ -6,7 +6,6 @@
     <style>
         body {
             background: #36254a;
-            /*background: #FCDE9C;*/
         }
         .container {
             margin-top: 28px;
@@ -43,56 +42,23 @@
         }
         .head .levitate {
             transform-origin: 50% 50%;
-            animation: attach-head 3s linear;
         }
         .bubble {
-            transform: translate(0,55px);
+            transform: translate(0,80px);
         }
-        .checkmark__circle {
-            stroke-dasharray: 166;
-            stroke-dashoffset: 166;
-            stroke-width: 2;
-            stroke-miterlimit: 10;
-            stroke: #7ac142;
-            fill: none;
-            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        .arm,
+        .leg {
+            transform-origin: 50% 0%;
         }
-        .checkmark {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: block;
-            stroke-width: 2;
-            stroke: #fff;
-            stroke-miterlimit: 10;
-            margin: 10% auto;
-            transform: translate(0,55px);
-            box-shadow: inset 0px 0px 0px #7ac142;
-            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        .head {
+            animation: attach-head 5s linear;
         }
-        .checkmark__check {
+        .lean {
+            animation: lean 5s linear;
+            transform-origin: 50% 0%;
+        }
+        .levitate {
             transform-origin: 50% 50%;
-            stroke-dasharray: 29;
-            stroke-dashoffset: 29;
-            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-        }
-        @keyframes stroke {
-            100% {
-                stroke-dashoffset: 0;
-            }
-        }
-        @keyframes scale {
-            0%, 100% {
-                transform: none;
-            }
-            50% {
-                transform: scale3d(1.1, 1.1, 1);
-            }
-        }
-        @keyframes fill {
-            100% {
-                box-shadow: inset 0px 0px 0px 30px #7ac142;
-            }
         }
     </style>
 </head>
@@ -100,9 +66,9 @@
     <div class="container">
         <svg id="robot" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 960 570">
             <circle fill="#fff" cx="470" cy="275" r="260"/>
-            <circle cx="470" cy="275" r="260" stroke="#ff0000" stroke-width="25" fill="none" fill-opacity="0.75"></circle>
-            <line x1="1" y1="372" x2="372" y2="1" stroke="#ff0000" stroke-width="25" cx="470" cy="254" r="25" fill-opacity="0.75" transform="translate(273,98)"></line>
-            <line x1="1" y1="1" x2="372" y2="372" stroke="#ff0000" stroke-width="25" transform="translate(273,98)" fill-opacity="0.75"></line>
+            <circle cx="470" cy="275" r="260" stroke="rgba(255, 0, 0, 1)" stroke-width="25" fill="none"></circle>
+            <line x1="1" y1="372" x2="372" y2="1" stroke="rgba(255, 0, 0, .5)" stroke-width="25" cx="470" cy="254" r="25" transform="translate(280,98)"></line>
+            <line x1="1" y1="1" x2="372" y2="372" stroke="rgba(255, 0, 0, .5)" stroke-width="25" transform="translate(273,95)"></line>
                 <g class="bubble">
                     <g class="head top">
                         <g class="before">
@@ -140,8 +106,9 @@
                         <g class="levitate">
                             <g>
                                 <path fill="#00bae6" d="M370.065,176c-0.001,0-0.004-0.065-0.004,0.028c0,48.908,44.819,88.43,100.106,88.43
-                        c55.286,0,100.105-39.46,100.105-88.368c0-0.093-0.004-0.09-0.004-0.09H370.065z"/>
-                            </g>
+                        c55.286,0,100.105-39.46,100.105-88.368c0-0.093-0.004-0.09-0.004-0.09H370.065z" opacity="1" fill-opacity="1"></path><path fill="#00bae6" d="M370.065,176c-0.001,0-0.004-0.065-0.004,0.028c0,48.908,44.819,88.43,100.106,88.43
+                        c55.286,0,100.105-39.46,100.105-88.368c0-0.093-0.004-0.09-0.004-0.09H370.065z" opacity="1" fill-opacity="1"></path><path fill="#00bae6" d="M370.065,176c-0.001,0-0.004-0.065-0.004,0.028c0,48.908,44.819,88.43,100.106,88.43
+                        c55.286,0,100.105-39.46,100.105-88.368c0-0.093-0.004-0.09-0.004-0.09H370.065z" opacity="1" fill-opacity="1"></path> </g>
                             <g class="eyes">
                                 <circle fill="#FFFFFF" stroke="#0099bb" stroke-width="5" stroke-miterlimit="10" cx="480.235" cy="141.86" r="14.015"/>
                                 <circle fill="#FFFFFF" stroke="#0099bb" stroke-width="5" stroke-miterlimit="10" cx="444.377" cy="141.86" r="14.015"/>
@@ -153,3 +120,4 @@
     </div>
 </body>
 </html>
+
