@@ -18,16 +18,17 @@ namespace RoastMe.Controllers
         {
             var traits = new List<Trait>();
             ProcessGlasses(face.FaceAttributes, traits);
+            ProcessBaldness(face.FaceAttributes, traits);
 
-            ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes);
-
+            ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes, traits);
             return traits;
         }
 
-       
-        private static void ProcessGlasses(FaceAttributes faceAttributes, List<Trait> traits) {
+
+        private static void ProcessGlasses(FaceAttributes faceAttributes, List<Trait> traits)
+        {
             if (faceAttributes.Glasses == Glasses.ReadingGlasses)
-                traits.Add(new Trait {Name = Glasses.ReadingGlasses.ToString(), Accuracy = 1.0 });
+                traits.Add(new Trait { Name = Glasses.ReadingGlasses.ToString(), Accuracy = 1.0 });
         }
 
         private static void ProcessNose(FaceRectangle faceRectangle, FaceLandmarks faceLandmarks, FaceAttributes faceAttributes, List<Trait> traits)
@@ -75,16 +76,22 @@ namespace RoastMe.Controllers
                 var noseLength = Math.Max(noseLeftLength, noseRightLength);
                 var noseLengthProportion = noseLength / (faceRectangle.Width * Math.Abs(faceAttributes.HeadPose.Yaw));
 
-                if (noseLengthProportion > 0.007)
+                if (noseLengthProportion > 0.008)
                 {
                     traits.Add(new Trait { Name = "bignose", Accuracy = 1.0 });
                 }
             }
         }
 
+        private static void ProcessBaldness(FaceAttributes faceAttributes, List<Trait> traits)
+        {
+            if (faceAttributes.Hair.Bald > 0.4)
+                traits.Add(new Trait { Name = "bald", Accuracy = 1.0 });
+        }
+
         private static double GetDistance(FeatureCoordinate start, FeatureCoordinate end)
         {
-            return Math.Sqrt(Math.Pow((end.X-start.X),2) + Math.Pow((end.Y - start.Y),2));
+            return Math.Sqrt(Math.Pow((end.X - start.X), 2) + Math.Pow((end.Y - start.Y), 2));
         }
     }
 }
