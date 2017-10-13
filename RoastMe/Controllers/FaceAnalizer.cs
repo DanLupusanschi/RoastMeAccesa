@@ -20,7 +20,7 @@ namespace RoastMe.Controllers
             ProcessGlasses(face.FaceAttributes, traits);
 
 
-
+            
 
             return traits;
         }
