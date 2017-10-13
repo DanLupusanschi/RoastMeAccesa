@@ -29,22 +29,29 @@ namespace RoastMe
                     // calculate something for us to return
                     int length = (activity.Text ?? string.Empty).Length;
                     var faceTraits = new List<Trait>();
+                    int faceCount = 0;
                     // return our reply to the user
 
                     var replyText = WatsonService.TalkToWatson(activity.Text, activity.Conversation.Id).Result;
                     if (activity.Attachments.Count == 1)
                     {
+
+
+
                         FaceConnector faceConnector = new FaceConnector();
-                        var faces = await faceConnector.UploadAndDetectFaces(activity.Attachments[0].ContentUrl);
+                        var faces = await faceConnector.UploadAndDetectFaces(activity);
                         if (faces.Length > 0)
                         {
                             faceTraits = FaceAnalizer.GetTraitsFromFace(faces[0]);
                         }
-                            
+                        faceCount = faces.Length;
+
+
                     }
                     // faceConnector.UploadAndDetectFaces(activity.Attachments)
+                    var joke = faceTraits.Count > 0 ? faceTraits[0].Name : "Some shitty joke";
 
-                    Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters:");
+                    Activity reply = activity.CreateReply($"You have {joke} {activity.Attachments[0].ContentUrl} {faceCount}");
                     await connector.Conversations.ReplyToActivityAsync(reply);
                 }
 
