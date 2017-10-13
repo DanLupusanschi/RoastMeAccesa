@@ -1,0 +1,27 @@
+<script>
+
+var n = 1;
+index: while (true) {
+    n += 1;
+    for (var i = 2; i <= Math.sqrt(n); I +=1)
+        if (n % i == 0) continue index;
+    postMessage(n)
+}
+
+</script>
+
+<button type="button" onclick="workerStart()">Start</button>
+<button type="button" onclick="worker.terminate()">Stop</button>
+<output></output>
+
+<script>
+    var worker = new Worker("worker3.js");
+
+    function workerStart()
+    {
+        worker.onmessage = function(e)
+        {
+            document.querySelector("output").textContent = e.data;
+        };
+    }
+</script>
