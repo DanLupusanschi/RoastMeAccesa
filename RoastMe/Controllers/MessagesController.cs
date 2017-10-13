@@ -67,7 +67,10 @@ namespace RoastMe
                         }
                         if (map.Keys.Count > 0)
                         {
-                            Activity reply = activity.CreateReply($"You have {map.Keys.First()}");
+                            var jokeService = new JokeService();
+                            var joke = jokeService.GetJoke(new List<Trait> { new Trait {Name = map.Keys.First(), Accuracy = 1.0 } });
+
+                            Activity reply = activity.CreateReply($"{joke}");
                             await connector.Conversations.ReplyToActivityAsync(reply);
                         }
                           

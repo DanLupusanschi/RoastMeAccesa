@@ -114,3 +114,7 @@ C:\Projects\RoastMeAccesa\RoastMe\bin\EntityFramework.dll
 C:\Projects\RoastMeAccesa\RoastMe\bin\EntityFramework.SqlServer.dll
 C:\Projects\RoastMeAccesa\RoastMe\bin\EntityFramework.xml
 C:\Projects\RoastMeAccesa\RoastMe\bin\EntityFramework.SqlServer.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\EntityFramework.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\EntityFramework.SqlServer.dll
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\EntityFramework.xml
+C:\Users\dan.lupusanschi\documents\visual studio 2017\Projects\RoastMe\RoastMe\bin\EntityFramework.SqlServer.xml
