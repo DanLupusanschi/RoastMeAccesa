@@ -8,6 +8,7 @@ using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
 using RoastMe.Controllers;
+using System.Collections.Generic;
 
 namespace RoastMe
 {
@@ -27,7 +28,7 @@ namespace RoastMe
                     ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
                     // calculate something for us to return
                     int length = (activity.Text ?? string.Empty).Length;
-                    string faceConfirm = string.Empty;
+                    var faceTraits = new List<Trait>();
                     // return our reply to the user
 
                     var replyText = WatsonService.TalkToWatson(activity.Text, activity.Conversation.Id).Result;
@@ -36,11 +37,14 @@ namespace RoastMe
                         FaceConnector faceConnector = new FaceConnector();
                         var faces = await faceConnector.UploadAndDetectFaces(activity.Attachments[0].ContentUrl);
                         if (faces.Length > 0)
-                            faceConfirm = faces[0].FaceAttributes.Gender;
+                        {
+                            faceTraits = FaceAnalizer.GetTraitsFromFace(faces[0]);
+                        }
+                            
                     }
                     // faceConnector.UploadAndDetectFaces(activity.Attachments)
 
-                    Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters: Age :{faceConfirm}");
+                    Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters:");
                     await connector.Conversations.ReplyToActivityAsync(reply);
                 }
 
