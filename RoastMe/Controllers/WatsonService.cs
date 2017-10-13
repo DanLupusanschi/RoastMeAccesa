@@ -2,6 +2,7 @@
 using Flurl;
 using Flurl.Http;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace RoastMe.Controllers
     {
         private static Dictionary<string, string> conversationContextDictionary = new Dictionary<string, string>();
 
-        public static async Task<dynamic> TalkToWatson(string input, string conversationId)
+        public static async Task<JObject> TalkToWatson(string input, string conversationId)
         {
             var baseurl = "https://gateway.watsonplatform.net/conversation/api";
             //var workspace = "4a486a7c-8861-4614-a647-a34aeec12526";
@@ -41,25 +42,26 @@ namespace RoastMe.Controllers
 
             var json = await resp.Content.ReadAsStringAsync();
 
-            var answer = new
-            {
-                intents = default(object),
-                entities = default(object),
-                input = default(object),
-                output = new
-                {
-                    text = default(string[])
-                },
-                context = default(object)
-            };
+            //var answer = new
+            //{
+            //    intents = default(object),
+            //    entities = default(object),
+            //    input = default(object),
+            //    output = new
+            //    {
+            //        text = default(string[])
+            //    },
+            //    context = default(object)
+            //};
 
-            answer = JsonConvert.DeserializeAnonymousType(json, answer);
-            if (conversationContextDictionary.ContainsKey(conversationId))
-                conversationContextDictionary[conversationId] = answer.context.ToString();
-            else
-                conversationContextDictionary.Add(conversationId, answer.context.ToString());
+            //var answer = JsonConvert.DeserializeObject<>(json);
+            return JObject.Parse(json);
+            //if (conversationContextDictionary.ContainsKey(conversationId))
+            //    conversationContextDictionary[conversationId] = answer.context.ToString();
+            //else
+            //    conversationContextDictionary.Add(conversationId, answer.context.ToString());
 
-            return answer;
+            //return answer.entities;
 
             //var output = "";
             //if (answer != null && answer.output != null && answer.output.text != null)
@@ -73,4 +75,23 @@ namespace RoastMe.Controllers
         }
     
     }
+
+    //var answer = new
+    //{
+    //    intents = default(object),
+    //    entities = default(object),
+    //    input = default(object),
+    //    output = new
+    //    {
+    //        text = default(string[])
+    //    },
+    //    context = default(object)
+    //};
+
+
+    //public class Answer
+    //{
+    //    public object intents;
+    //    public IEnumerable<object>
+    //}
 }

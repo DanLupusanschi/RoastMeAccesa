@@ -9,6 +9,8 @@ using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
 using RoastMe.Controllers;
 using System.Collections.Generic;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Linq;
 using RoastMe.Data;
 
 namespace RoastMe
@@ -24,42 +26,65 @@ namespace RoastMe
         {
             if (activity.Type == ActivityTypes.Message)
             {
+                ConnectorClient connector = null;
                 try
                 {
-                    ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                    var traitsConcatenated = string.Empty;
+                    connector = new ConnectorClient(new Uri(activity.ServiceUrl));
                     // calculate something for us to return
                     int length = (activity.Text ?? string.Empty).Length;
                     var faceTraits = new List<Trait>();
                     int faceCount = 0;
                     // return our reply to the user
 
-                    var replyText = WatsonService.TalkToWatson(activity.Text, activity.Conversation.Id).Result;
+                   
                     if (activity.Attachments.Count == 1)
                     {
-
-
-
                         FaceConnector faceConnector = new FaceConnector();
                         var faces = await faceConnector.UploadAndDetectFaces(activity);
                         if (faces.Length > 0)
                         {
                             faceTraits = FaceAnalizer.GetTraitsFromFace(faces[0]);
                         }
+
                         faceCount = faces.Length;
+
+
+
+                        var jokeService = new JokeService();
+                        var joke = jokeService.GetJoke(faceTraits);
+
+                        Activity reply = activity.CreateReply($"You have {traitsConcatenated}");
+                        await connector.Conversations.ReplyToActivityAsync(reply);
+                    }
+                    else
+                    {
+                        JObject r = await WatsonService.TalkToWatson(activity.Text, activity.Conversation.Id);
+                        Dictionary<string, double> map = new Dictionary<string, double>();
+                        foreach(JObject entity in r["entities"])
+                        {
+                            map[entity["value"].Value<string>()] = entity["confidence"].Value<double>();
+                        }
+                        if (map.Keys.Count > 0)
+                        {
+                            Activity reply = activity.CreateReply($"You have {map.Keys.First()}");
+                            await connector.Conversations.ReplyToActivityAsync(reply);
+                        }
+                          
+                        //var entities = ((IEnumerable<object>)r.Result).ToList()[1];
+                        // var replyText = ((Newtonsoft.Json.Linq.JProperty )entities);
 
                     }
                     // faceConnector.UploadAndDetectFaces(activity.Attachments)
-                    //var joke = faceTraits.Count > 0 ? faceTraits[0].Name : "Some shitty joke";
-
-                    var jokeService = new JokeService();
-                    var joke = jokeService.GetJoke(faceTraits);
-
-                    Activity reply = activity.CreateReply($"{joke} {activity.Attachments[0].ContentUrl} {faceCount}");
-                    await connector.Conversations.ReplyToActivityAsync(reply);
+                   
                 }
 
-                catch(Exception e) {
-
+                catch (Exception ex) {
+                    if (connector != null)
+                    {
+                        Activity reply = activity.CreateReply(ex.Message);
+                        await connector.Conversations.ReplyToActivityAsync(reply);
+                    }
                 }
              
             }

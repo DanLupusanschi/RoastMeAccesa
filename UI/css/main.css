@@ -546,3 +546,14 @@ body > .slide-container .slide-status {
       bottom: 0;
       z-index: 11;
   }
+
+  .team {
+  position: absolute;
+    bottom: 05px;
+    left: 15px;
+  }
+
+.team ul li {
+  font-size: 16pt;
+  list-style-type: none;
+}
