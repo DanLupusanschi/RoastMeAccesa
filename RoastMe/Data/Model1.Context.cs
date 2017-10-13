@@ -13,10 +13,10 @@ namespace RoastMe.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RoastMeDbEntities1 : DbContext
+    public partial class RoastMeDbEntities2 : DbContext
     {
-        public RoastMeDbEntities1()
-            : base("name=RoastMeDbEntities1")
+        public RoastMeDbEntities2()
+            : base("name=RoastMeDbEntities2")
         {
         }
     

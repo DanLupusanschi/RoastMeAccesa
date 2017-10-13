@@ -16,18 +16,6 @@ namespace RoastMe
     [BotAuthentication]
     public class MessagesController : ApiController
     {
-        private RoastMeDbEntities1 _context;
-        public RoastMeDbEntities1 dbContext
-        {
-            get
-            {
-                if (_context == null)
-                {
-                    _context = new RoastMeDbEntities1();
-                }
-                return _context;
-            }
-        }
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -61,13 +49,16 @@ namespace RoastMe
 
                     }
                     // faceConnector.UploadAndDetectFaces(activity.Attachments)
-                    var joke = faceTraits.Count > 0 ? faceTraits[0].Name : "Some shitty joke";
+                    //var joke = faceTraits.Count > 0 ? faceTraits[0].Name : "Some shitty joke";
 
-                    Activity reply = activity.CreateReply($"You have {joke} {activity.Attachments[0].ContentUrl} {faceCount}");
+                    var jokeService = new JokeService();
+                    var joke = jokeService.GetJoke(faceTraits);
+
+                    Activity reply = activity.CreateReply($"{joke} {activity.Attachments[0].ContentUrl} {faceCount}");
                     await connector.Conversations.ReplyToActivityAsync(reply);
                 }
 
-                catch {
+                catch(Exception e) {
 
                 }
              

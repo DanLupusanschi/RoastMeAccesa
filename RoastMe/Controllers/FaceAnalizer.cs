@@ -28,7 +28,7 @@ namespace RoastMe.Controllers
         private static void ProcessGlasses(FaceAttributes faceAttributes, List<Trait> traits)
         {
             if (faceAttributes.Glasses == Glasses.ReadingGlasses)
-                traits.Add(new Trait { Name = Glasses.ReadingGlasses.ToString(), Accuracy = 1.0 });
+                traits.Add(new Trait { Name = "glasses", Accuracy = 1.0 });
         }
 
         private static void ProcessNose(FaceRectangle faceRectangle, FaceLandmarks faceLandmarks, FaceAttributes faceAttributes, List<Trait> traits)
