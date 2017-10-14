@@ -90,11 +90,7 @@ namespace RoastMe.Controllers
             }
         }
 
-        private static void ProcessBaldness(FaceAttributes faceAttributes, List<Trait> traits)
-        {
-            if (faceAttributes.Hair.Bald > 0.4)
-                traits.Add(new Trait { Name = "bald", Accuracy = 1.0 });
-        }
+     
 
         private static double GetDistance(FeatureCoordinate start, FeatureCoordinate end)
         {
@@ -109,7 +105,7 @@ namespace RoastMe.Controllers
         private static void ProcessBald(FaceAttributes faceAttributes, List<Trait> traits)
         {
             if (faceAttributes.Hair.Bald >= 0.4)
-                traits.Add(new Trait { Name = "Bald", Accuracy = faceAttributes.Hair.Bald });
+                traits.Add(new Trait { Name = "bald", Accuracy = faceAttributes.Hair.Bald });
         }
         private static void ProcessHairColor(FaceAttributes faceAttributes, List<Trait> traits)
         {
