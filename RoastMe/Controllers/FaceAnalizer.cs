@@ -135,11 +135,6 @@ namespace RoastMe.Controllers
             {
                 traits.Add(new Trait { Name = "surprise", Accuracy = faceAttributes.Emotion.Surprise });
             }
-
-            if (faceAttributes.Emotion.Neutral >= 0.8)
-            {
-                traits.Add(new Trait { Name = "neutral", Accuracy = faceAttributes.Emotion.Neutral });
-            }
         }
 
         private static void ProcessMakeup(FaceAttributes faceAttributes, List<Trait> traits)

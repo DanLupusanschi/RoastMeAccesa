@@ -12,36 +12,61 @@ namespace RoastMe.Controllers
     {
         public string GetJoke(List<Trait> traits)
         {
+            if (traits.Count == 0)
+                traits.Add(new Trait { Name = "neutral", Accuracy = 1 });
+            var allTraits = String.Join(",", traits.Select(x => x.Name));
+
             string conn = ConfigurationManager.ConnectionStrings["RoastMeDbEntities"].ConnectionString;
             //The query to use
-            string query = "SELECT * FROM Jokes";
             SqlConnection connection = new SqlConnection(conn);
-            //Create a Data Adapter
-            SqlDataAdapter dadapter = new SqlDataAdapter(query, connection);
-            //Create the dataset
-            DataSet ds = new DataSet();
-            //Open the connection
+
+
+            SqlCommand cmd = new SqlCommand("GiveMeJoke", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@keyword", SqlDbType.VarChar).Value = allTraits;
+            //SqlParameter param = cmd.Parameters.AddWithValue("@joke", SqlDbType.NVarChar);
+
+            //param.Direction = ParameterDirection.Output;
+            //SqlParameter returnValue = new SqlParameter();
+            //returnValue.SqlDbType = SqlDbType.NVarChar;
+            //returnValue.Direction = ParameterDirection.ReturnValue;
+            //cmd.Parameters.Add(returnValue);
+            SqlDataReader reader;
+
             connection.Open();
-            //Fill the Data Adapter
-            dadapter.Fill(ds, "Jokes");
-            connection.Close();
 
-            if(traits.Count <= 0)
-                traits.Add(new Trait { Name = "neutral", Accuracy = 1 });
+            var joke = "";
 
-            var jokes = new List<string>();
-
-            for(var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            reader = cmd.ExecuteReader();
+            if (reader.HasRows)
             {
-                if (traits.Any(x => x.Name == ds.Tables[0].Rows[i][1].ToString()))
+                while (reader.Read())
                 {
-                    jokes.Add(ds.Tables[0].Rows[i][0].ToString());
+                    joke = reader.GetString(0);
+                    break;
                 }
             }
+            connection.Close();
 
-            var rnd = new Random();
-            var jokeNo = rnd.Next(0, jokes.Count);
-            return jokes.ElementAt(jokeNo);
+            //if(traits.Count <= 0)
+            //    traits.Add(new Trait { Name = "neutral", Accuracy = 1 });
+
+            //var jokes = new List<string>();
+
+            //for(var i = 0; i < ds.Tables[0].Rows.Count; i++)
+            //{
+            //    if (traits.Any(x => x.Name == ds.Tables[0].Rows[i][1].ToString()))
+            //    {
+            //        jokes.Add(ds.Tables[0].Rows[i][0].ToString());
+            //    }
+            //}
+
+            //var rnd = new Random();
+            //var jokeNo = rnd.Next(0, jokes.Count);
+            //return jokes.ElementAt(jokeNo);
+
+            return joke;
         }
     }
 }
