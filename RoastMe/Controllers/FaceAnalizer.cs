@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace RoastMe.Controllers
 {
@@ -10,8 +9,8 @@ namespace RoastMe.Controllers
     {
         public string Name { get; set; }
         public double Accuracy { get; set; }
-
     }
+
     public static class FaceAnalizer
     {
         public static List<Trait> GetTraitsFromFace(Face face)
@@ -23,14 +22,10 @@ namespace RoastMe.Controllers
             ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes, traits);
             ProcessBeard(face.FaceAttributes, traits);
             ProcessEmotion(face.FaceAttributes, traits);
-            //ProcessMakeup(face.FaceAttributes, traits);
             ProcessOldAge(face.FaceAttributes, traits);
-
-            //ProcessNose(face.FaceRectangle, face.FaceLandmarks, face.FaceAttributes);
 
             return traits;
         }
-
 
         private static void ProcessGlasses(FaceAttributes faceAttributes, List<Trait> traits)
         {
